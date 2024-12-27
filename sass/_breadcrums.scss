@@ -1,0 +1,38 @@
+.breadcrums {
+  display: flex;
+  gap: 15px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    flex-wrap: wrap;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      color: $grey;
+      @include gothamReg($s: 12px, $lh: 150%);
+      transition: 0.3s;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        white-space: nowrap;
+      }
+    }
+    &:hover {
+      a {
+        color: $blackLight;
+        transition: 0.3s;
+      }
+    }
+    &::after {
+      content: url("../imgs/grey-arr.svg");
+      display: block;
+      position: relative;
+      top: -2px;
+    }
+    &:nth-last-child(1) {
+      &::after {
+        content: "";
+      }
+    }
+  }
+}

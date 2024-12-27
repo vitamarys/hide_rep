@@ -1,0 +1,236 @@
+.project-card {
+  display: flex;
+  width: 100%;
+  margin-top: 180px;
+  background-color: $white;
+  @include adaptive(
+    tabletLandscape,
+    tabletPortrait,
+    phoneLandscape,
+    phonePortrait
+  ) {
+    flex-direction: column;
+  }
+  @include adaptive(phoneLandscape, phonePortrait) {
+    margin-top: 75px;
+  }
+  .imgs {
+    width: 560px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      width: 100%;
+      background-color: $white;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      gap: 10px;
+    }
+    .big-wrap {
+      min-height: 560px;
+      width: 100%;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        min-height: 320px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .small-wrap {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        gap: 10px;
+        height: 90px;
+      }
+      .img-wrap {
+        width: calc(33.333% - 10px);
+        position: relative;
+        .overlay {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background: rgba(0, 0, 0, 0.6);
+          span {
+            @include gothamBold($s: 16px, $lh: 100%);
+            color: $white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            img {
+              position: relative;
+              top: -2px;
+            }
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .text-content {
+    background-color: $white;
+    width: calc(100% - 560px);
+    padding: 40px;
+    position: relative;
+    @include adaptive(phoneLandscape, phonePortrait) {
+      padding: 20px;
+    }
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      width: 100%;
+    }
+    .stiker {
+      @include gothamBold($s: 16px, $lh: 100%);
+      color: $gold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 50px;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        margin-bottom: 30px;
+        margin-top: 10px;
+      }
+    }
+    .title {
+      @include fontHeading($s: 45px, $w: 500, $lh: 110%);
+      margin-bottom: 20px;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        @include fontHeading($s: 30px, $w: 500, $lh: 110%);
+      }
+    }
+    .geo {
+      display: flex;
+      align-items: center;
+      @include gothamBold($s: 12px, $lh: 100%);
+      color: $blackLight;
+      gap: 3px;
+      margin-bottom: 30px;
+    }
+    .paragraf {
+      @include gothamReg($s: 16px, $lh: 150%);
+      color: $whiteDark;
+      margin-bottom: 30px;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        @include gothamReg($s: 14px, $lh: 150%);
+      }
+    }
+    .characteristics {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 40px;
+      &__item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        @include gothamBlack($s: 16px, $lh: 100%);
+        color: $blackLight;
+      }
+    }
+    .price-bold {
+      display: block;
+      @include gothamBold($s: 25px, $lh: 100%);
+      color: $gold;
+      margin-bottom: 5px;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        @include gothamBold($s: 20px, $lh: 100%);
+      }
+    }
+    .price-light {
+      @include gothamReg($s: 16px, $lh: 150%);
+      color: $gold;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        @include gothamReg($s: 14px, $lh: 150%);
+      }
+    }
+    .btns {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 40px;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        margin-top: 0px;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        justify-content: flex-start;
+        margin-top: 20px;
+      }
+      .btn {
+        border: 1px solid $gold;
+
+        &.trans {
+          border: 1px solid $gold;
+          .mas {
+            background-color: $white;
+          }
+          button {
+            background-color: $white;
+            color: $gold;
+          }
+          .mas {
+            background-color: $gold;
+            color: $blackLight;
+          }
+        }
+        button {
+          background-color: $blackLight;
+          color: $white;
+          word-spacing: 200px;
+          text-align: left;
+          padding-left: 55px;
+          @include gothamBlack($s: 16px, $lh: 90%);
+          @include adaptive(phoneLandscape, phonePortrait) {
+            padding-left: 30px;
+          }
+        }
+        // @include adaptive(phoneLandscape, phonePortrait) {
+        //   width: 140px;
+        //   height: 140px;
+        // }
+        // border-radius: 100%;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // @include gothamBlack($s: 16px, $lh: 90%);
+        // color: $gold;
+        .mas {
+          background-color: $gold;
+          word-spacing: 200px;
+          text-align: left;
+          padding-left: 55px;
+          @include gothamBlack($s: 16px, $lh: 90%);
+        }
+
+        &.trans {
+          position: relative;
+
+          left: 40px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            left: 15px;
+          }
+        }
+      }
+    }
+  }
+}

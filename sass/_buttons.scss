@@ -1,0 +1,212 @@
+.button-container-1 {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #222;
+
+  transition: 0.5s;
+
+  button {
+    width: 101%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    @include gothamBold($s: 16px, $lh: 90%);
+    @include button(
+      #222,
+      "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+      2300%,
+      100%,
+      none,
+      #fff
+    );
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
+
+    &:hover {
+      -webkit-animation: ani 0.7s steps(22) forwards;
+      animation: ani 0.7s steps(22) forwards;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        -webkit-animation: none;
+        animation: none;
+      }
+    }
+  }
+}
+
+.button-container-2 {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh;
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+
+  button {
+    width: 101%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    @include gothamBold($s: 16px, $lh: 90%);
+    @include button(
+      #222,
+      "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png",
+      3000%,
+      100%,
+      none,
+      #fff
+    );
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(29) forwards;
+    animation: ani2 0.7s steps(29) forwards;
+
+    &:hover {
+      -webkit-animation: ani 0.7s steps(29) forwards;
+      animation: ani 0.7s steps(29) forwards;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        -webkit-animation: none;
+        animation: none;
+      }
+    }
+  }
+}
+
+.mas {
+  position: absolute;
+  color: #222;
+  text-align: center;
+  width: 101%;
+  background-color: #ffffff;
+  height: 100%;
+  @include gothamBold($s: 16px, $lh: 90%);
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+.button-container-3 {
+  position: relative;
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+  overflow: hidden;
+  border: none;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    width: 140px;
+    height: 140px;
+  }
+  button {
+    width: 101%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    @include gothamBold($s: 16px, $lh: 90%);
+
+    @include button(#222, "../imgs/natureSmaller.png", 7100%, 100%, none, #fff);
+    cursor: pointer;
+    -webkit-animation: ani2 0.7s steps(70) forwards;
+    animation: ani2 0.7s steps(70) forwards;
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      -webkit-animation: none;
+      animation: none;
+    }
+    &:hover {
+      -webkit-animation: ani 0.7s steps(70) forwards;
+      animation: ani 0.7s steps(70) forwards;
+    }
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      &:hover {
+        -webkit-animation: none;
+        animation: none;
+      }
+    }
+  }
+}

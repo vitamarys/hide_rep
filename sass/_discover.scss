@@ -1,0 +1,304 @@
+.discover {
+  margin-top: 200px;
+  @include adaptive(
+    tabletLandscape,
+    tabletPortrait,
+    phoneLandscape,
+    phonePortrait
+  ) {
+    margin-top: 100px;
+  }
+  .container {
+    display: flex;
+    gap: 30px;
+    @include adaptive(tabletLandscape, tabletPortrait) {
+      flex-direction: column;
+      gap: 30px;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .content-item {
+      width: calc(50% - 15px);
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        width: 100%;
+      }
+      .title {
+        color: $white;
+        @include fontHeading($s: 80px, $w: 500, $lh: 90%);
+        letter-spacing: -2.4px;
+        max-width: 500px;
+        margin-bottom: 180px;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          margin-bottom: 0px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          @include fontHeading($s: 40px, $w: 500, $lh: 100%);
+          max-width: 70%;
+        }
+        .gold {
+          color: $gold;
+        }
+      }
+      .img-wrap {
+        width: 400px;
+        height: 450px;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          display: none;
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .text-block {
+        display: flex;
+        justify-content: space-between;
+        .btn {
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          position: relative;
+          top: -25px;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+
+          button {
+            background-color: $black;
+            color: $white;
+            word-spacing: 200px;
+            text-align: left;
+            display: flex;
+            padding-left: 52px;
+            position: relative;
+            &::after {
+              content: ".pdf";
+              position: absolute;
+              right: 39px;
+              bottom: 58px;
+              @include gothamReg($s: 12px, $lh: 90%);
+              color: $gold;
+            }
+            @include gothamBlack($s: 16px, $lh: 90%);
+            @include adaptive(phoneLandscape, phonePortrait) {
+              padding-left: 40px;
+            }
+          }
+
+          .mas {
+            background-color: $gold;
+            color: $black;
+            word-spacing: 200px;
+            text-align: left;
+            padding-left: 50px;
+            @include gothamBlack($s: 16px, $lh: 90%);
+          }
+
+          &.trans {
+            position: relative;
+
+            left: 40px;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              left: 15px;
+            }
+          }
+        }
+        .text-wrap {
+          display: flex;
+          flex-direction: column;
+          .descr {
+            @include gothamReg($s: 16px, $lh: 150%);
+            color: $whiteDark;
+            max-width: 280px;
+            margin-bottom: 40px;
+            @include adaptive(
+              tabletLandscape,
+              tabletPortrait,
+              phoneLandscape,
+              phonePortrait
+            ) {
+              margin-bottom: 30px;
+              max-width: 100%;
+            }
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include gothamReg($s: 14px, $lh: 150%);
+            }
+          }
+          .link {
+            @include gothamBold($s: 16px, $lh: 90%);
+            text-decoration: underline;
+            color: $white;
+            transition: 0.3s;
+            &:hover {
+              opacity: 0.6;
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+      .big-card {
+        width: 100%;
+        margin-top: 60px;
+        background-color: $blackLight;
+        display: flex;
+        flex-direction: column;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          flex-direction: column;
+        }
+        &__content {
+          width: 100%;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            position: relative;
+          }
+          &.imgs {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+            flex-direction: row;
+          }
+          &:nth-child(1) {
+            padding: 40px;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              padding: 20px;
+            }
+          }
+          .title {
+            @include gothamBold($s: 40px, $lh: 110%);
+            color: $white;
+            margin-bottom: 25px;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include gothamBold($s: 30px, $lh: 110%);
+              max-width: 100%;
+            }
+          }
+          .list {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+
+            width: 100%;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              gap: 5px;
+            }
+            &__item {
+              padding: 14px 20px;
+
+              border-radius: 30px;
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              @include adaptive(phoneLandscape, phonePortrait) {
+                padding: 7px 14px;
+              }
+              a {
+                color: $white;
+                @include gothamReg($s: 16px, $lh: 100%);
+                @include adaptive(phoneLandscape, phonePortrait) {
+                  @include gothamReg($s: 12px, $lh: 100%);
+                }
+              }
+
+              &:nth-last-child(1) {
+                background-color: $white;
+                border: 1px solid $white;
+                a {
+                  color: $blackLight;
+                }
+              }
+            }
+          }
+          .progress {
+            margin-bottom: 60px;
+            // filter: brightness(80%) sepia(100%) hue-rotate(10deg);
+            width: fit-content;
+            @include adaptive(tabletLandscape, tabletPortrait) {
+              position: absolute;
+              bottom: 0;
+              left: 40px;
+              transform: translateY(65px);
+            }
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include gothamReg($s: 14px, $lh: 150%);
+              margin-bottom: 60px;
+            }
+          }
+          .img-wrap {
+            @include adaptive(
+              tabletLandscape,
+              tabletPortrait,
+              phoneLandscape,
+              phonePortrait
+            ) {
+              display: flex;
+            }
+            &.s {
+              width: 28%;
+              height: 200px;
+              @include adaptive(tabletLandscape, tabletPortrait) {
+                height: 180px;
+              }
+              @include adaptive(phoneLandscape, phonePortrait) {
+                height: 125px;
+              }
+            }
+            &.m {
+              width: 33%;
+              height: 225px;
+              @include adaptive(tabletLandscape, tabletPortrait) {
+                height: 210px;
+              }
+              @include adaptive(phoneLandscape, phonePortrait) {
+                height: 165px;
+              }
+            }
+            &.l {
+              width: 37%;
+              height: 100%;
+              @include adaptive(tabletLandscape, tabletPortrait) {
+                height: 290px;
+              }
+              @include adaptive(phoneLandscape, phonePortrait) {
+                height: 230px;
+              }
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

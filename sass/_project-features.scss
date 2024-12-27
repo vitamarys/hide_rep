@@ -1,0 +1,145 @@
+.features {
+  padding-top: 180px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-top: 70px;
+  }
+  .container {
+    .content {
+      display: flex;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        flex-direction: column;
+        position: relative;
+      }
+      .content-item {
+        margin-bottom: 50px;
+        &:nth-child(1) {
+          width: 33.333%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        &:nth-child(2) {
+          width: calc(100% - 33.333%);
+          display: flex;
+          gap: 45px;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            flex-direction: column;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            width: 100%;
+          }
+        }
+        .small-title {
+          @include gothamBold($s: 16px, $lh: 90%);
+          color: $blackLight;
+        }
+        .dev-logo {
+          max-width: 200px;
+
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            position: absolute;
+            right: 0;
+            top: 190px;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            display: none;
+          }
+        }
+        .card {
+          width: 50%;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            width: 100%;
+          }
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            max-width: 400px;
+          }
+          .img-wrap {
+            width: 80px;
+            height: 80px;
+            border: 1px solid $whiteDark;
+            border-radius: 100%;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              max-width: 50px;
+              max-height: 50px;
+            }
+          }
+          .title {
+            @include fontHeading($s: 45px, $w: 500, $lh: 110%);
+            letter-spacing: -1.35px;
+            margin-bottom: 20px;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include fontHeading($s: 30px, $w: 500, $lh: 110%);
+            }
+          }
+          .descr {
+            @include gothamReg($s: 16px, $lh: 150%);
+            color: $whiteDark;
+          }
+        }
+      }
+    }
+    .img-block {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      height: 500px;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        display: block;
+        position: relative;
+        left: -70px;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        display: block;
+        position: relative;
+        left: -25px;
+      }
+      .img-wrap {
+        width: 31%;
+        height: 100%;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          display: none;
+        }
+        &.big {
+          width: calc(69% - 40px);
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            width: calc(100% + 140px);
+            display: block;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            width: calc(100% + 50px);
+            display: block;
+          }
+        }
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

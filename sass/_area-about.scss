@@ -1,0 +1,185 @@
+.area-about {
+  padding-top: 100px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    @include fontHeading($s: 68px, $w: 500, $lh: 67.5%);
+    padding-top: 30px;
+  }
+  .container {
+    .title-wrap {
+      mix-blend-mode: luminosity;
+      position: relative;
+      opacity: 0.1;
+      .title {
+        @include fontHeading($s: 180px, $w: 400, $lh: 90%);
+        letter-spacing: -5.746px;
+        color: $gold;
+        padding: 70px 0;
+        background-image: url("../imgs/gifTitle.gif");
+        background-size: cover;
+        color: transparent;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          @include fontHeading($s: 133px, $w: 500, $lh: 67.5%);
+          letter-spacing: -3.347px;
+          padding: 40px 0;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          @include fontHeading($s: 68px, $w: 500, $lh: 67.5%);
+          padding: 20px 0;
+        }
+      }
+    }
+    .content-block {
+      display: flex;
+      margin-top: 80px;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        margin-top: 40px;
+        flex-direction: column;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        margin-top: 40px;
+        flex-direction: column;
+      }
+      .content-item {
+        &:nth-child(1) {
+          width: 33.333%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            width: 100%;
+          }
+        }
+        &:nth-child(2) {
+          width: calc(100% - 33.333%);
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            width: 100%;
+          }
+        }
+
+        .small-title {
+          @include gothamBold($s: 16px, $lh: 90%);
+          color: $blackLight;
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            margin-bottom: 40px;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            margin-bottom: 40px;
+          }
+        }
+        .dev-logo {
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+          img {
+            max-width: 100%;
+            display: block;
+            margin-bottom: 25px;
+          }
+          .link {
+            @include gothamBold($s: 16px, $lh: 90%);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            color: $gold;
+            position: relative;
+            width: fit-content;
+            transition: 0.3s;
+
+            &::after {
+              content: url("../imgs/arr-45-gold.svg");
+            }
+            &::before {
+              content: "";
+              width: 100%;
+              height: 1px;
+              background-color: $gold;
+              position: absolute;
+              left: 0;
+              bottom: -5px;
+            }
+            &:hover {
+              opacity: 0.6;
+              transition: 0.3s;
+            }
+          }
+        }
+        .title {
+          color: $blackLight;
+          @include fontHeading($s: 45px, $w: 500, $lh: 110%);
+          letter-spacing: -1.35px;
+          margin-bottom: 30px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include fontHeading($s: 30px, $w: 500, $lh: 110%);
+            letter-spacing: -0.9px;
+          }
+        }
+        .paragraf {
+          @include gothamReg($s: 16px, $lh: 150%);
+          color: $whiteDark;
+          margin-bottom: 10px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamReg($s: 14px, $lh: 150%);
+          }
+        }
+        .characteristics {
+          display: flex;
+          gap: 75px;
+          flex-wrap: wrap;
+          margin-top: 50px;
+          &__item {
+            display: flex;
+            flex-direction: column;
+
+            .bold {
+              @include gothamBold($s: 25px, $lh: 150%);
+              color: $blackLight;
+              @include adaptive(phoneLandscape, phonePortrait) {
+                @include gothamBold($s: 20px, $lh: 150%);
+              }
+            }
+            .light {
+              @include gothamReg($s: 16px, $lh: 150%);
+              color: $whiteDark;
+              @include adaptive(phoneLandscape, phonePortrait) {
+                @include gothamReg($s: 12px, $lh: 150%);
+              }
+            }
+            &.mob-dev {
+              display: none;
+              @include adaptive(
+                tabletLandscape,
+                tabletPortrait,
+                phoneLandscape,
+                phonePortrait
+              ) {
+                display: block;
+                width: 100%;
+                img {
+                  max-width: 200px;
+                  max-height: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

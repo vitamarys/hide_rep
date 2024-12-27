@@ -1,0 +1,260 @@
+.project-hero {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  &.area-hero {
+    .container {
+      .content-item {
+        &:nth-child(2) {
+          padding-left: 0px;
+        }
+        .buttons-wrap {
+          gap: 40px;
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      flex-wrap: wrap;
+    }
+    .content-item {
+      width: 50%;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        padding-left: 100px;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          padding-left: 0px;
+        }
+      }
+      .breadcrums {
+        margin-bottom: 60px;
+      }
+      .title {
+        .gold {
+          color: $gold;
+        }
+      }
+      .geo-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 100px;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+        .geo {
+          @include gothamBold($s: 14px, $lh: 90%);
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          img {
+            position: relative;
+            top: -2px;
+          }
+        }
+        .type {
+          display: flex;
+          gap: 5px;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            margin-top: 10px;
+          }
+          &__item {
+            padding: 9px 15px;
+            border-radius: 30px;
+            color: $whiteDark;
+            border: 1px solid rgba(123, 123, 123, 0.5);
+
+            display: flex;
+            align-items: center;
+            @include gothamReg($s: 12px, $lh: 100%);
+          }
+        }
+      }
+      .project-info {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        margin-bottom: 45px;
+        @include adaptive(phoneLandscape, phonePortrait) {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 20px;
+        }
+        &__item {
+          max-width: calc(50% - 20px);
+          @include adaptive(phoneLandscape, phonePortrait) {
+            width: calc(50% - 10px);
+          }
+          .value {
+            @include gothamBlack($s: 25px, $lh: 150%);
+            color: $blackLight;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include gothamBlack($s: 20px, $lh: 150%);
+            }
+          }
+          .name {
+            @include gothamReg($s: 16px, $lh: 150%);
+            color: $whiteDark;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include gothamReg($s: 12px, $lh: 150%);
+            }
+          }
+        }
+      }
+      .buttons-wrap {
+        display: flex;
+        gap: 10px;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          gap: 20px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .button {
+          border-radius: 30px;
+          width: 50%;
+          height: 60px;
+          @include gothamBold($s: 14px, $lh: 100%);
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          outline: none;
+          img {
+            width: 15px;
+            height: 15px;
+            display: block;
+            position: relative;
+            top: -1.5px;
+          }
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            width: calc(50% - 10px);
+            justify-content: center;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            width: 100%;
+            justify-content: center;
+          }
+          &.trans-btn {
+            border: 1px solid rgba(208, 169, 102, 0.5);
+            background-color: transparent;
+            color: $gold;
+            &:hover {
+              background-color: $gold;
+              border: 1px solid $gold;
+              color: $white;
+              transition: 0.3s;
+            }
+          }
+          &.gold-btn {
+            border: 1px solid $gold;
+            background-color: $gold;
+            color: $white;
+            &:hover {
+              background-color: $blackLight;
+              border: 1px solid $blackLight;
+              color: $white;
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+    }
+  }
+  .baner {
+    max-width: 1340px;
+    margin: 80px auto 0 auto;
+    height: 600px;
+    position: relative;
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .baner__btns {
+      position: absolute;
+      bottom: -90px;
+      right: 80px;
+      display: flex;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        right: 60px;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        right: auto;
+        left: 20px;
+        bottom: -70px;
+      }
+      .btn {
+        cursor: pointer;
+        z-index: 1;
+        position: relative;
+
+        img {
+          max-width: 60px;
+          max-height: 60px;
+          opacity: 0.2;
+        }
+        span {
+          @include gothamBold($s: 16px, $lh: 90%);
+          color: $white;
+        }
+        &.gold {
+          position: relative;
+          left: -60px;
+          button {
+            background-color: $gold;
+
+            z-index: 2;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            left: -30px;
+          }
+        }
+        .mas {
+          color: $blackLight;
+          flex-direction: column;
+          justify-content: center;
+        }
+        button {
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

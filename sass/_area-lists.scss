@@ -1,0 +1,359 @@
+.areas-list {
+  margin-top: 80px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    margin-top: 60px;
+  }
+  .container {
+    .filter-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .filter-wrap {
+        display: flex;
+        gap: 10px;
+        .filter-btn {
+          display: flex;
+          height: 50px;
+          padding: 0 30px;
+          gap: 7px;
+          align-items: center;
+          border-radius: 25px;
+          background-color: $whiteDark;
+          color: $white;
+          @include gothamBlack($s: 16px, $lh: 90%);
+          border: none;
+          outline: none;
+          cursor: pointer;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamBlack($s: 14px, $lh: 90%);
+          }
+        }
+        .dropdown-wrap {
+          @include adaptive(phoneLandscape, phonePortrait) {
+            display: none;
+          }
+          .dropdown-select {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            height: 50px;
+            border: 1px solid rgba(34, 34, 34, 0.2);
+            border-radius: 25px;
+            gap: 7px;
+            cursor: pointer;
+            .ligth {
+              @include gothamReg($s: 16px, $lh: 100%);
+              color: $whiteDark;
+            }
+            .bold {
+              @include gothamBold($s: 16px, $lh: 100%);
+              color: $black;
+            }
+          }
+        }
+      }
+      .link {
+        @include gothamReg($s: 16px, $lh: 100%);
+        color: $whiteDark;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        position: relative;
+        @include adaptive(phoneLandscape, phonePortrait) {
+          @include gothamReg($s: 14px, $lh: 100%);
+        }
+        img {
+          width: 16px;
+          height: 16px;
+        }
+        &::before {
+          content: "";
+          height: 1px;
+          background-color: $blackLight;
+          opacity: 0.2;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+        }
+      }
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 40px;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        gap: 20px;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        gap: 30px;
+      }
+      &__item {
+        width: calc(33.333% - 27px);
+        background-color: $white;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          width: calc(50% - 10px);
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          width: 100%;
+        }
+        .img-wrap {
+          height: 320px;
+          width: 100%;
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .text-block {
+          padding: 30px;
+          .card-title {
+            @include gothamBold($s: 20px, $lh: 140%);
+            margin-bottom: 5px;
+            color: #3b3734;
+          }
+          .descr {
+            @include gothamReg($s: 14px, $lh: 140%);
+            color: $whiteDark;
+            margin-bottom: 25px;
+          }
+          .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .price {
+              display: flex;
+              gap: 6px;
+              align-items: center;
+              @include gothamBold($s: 14px, $lh: 130%);
+              color: $gold;
+            }
+            .units {
+              @include gothamBold($s: 12px, $lh: 120%);
+            }
+          }
+        }
+      }
+    }
+    .big-card {
+      width: 100%;
+
+      background-color: #3f3f3f;
+      display: flex;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        margin: 60px 0;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        margin: 50px 0;
+      }
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        flex-direction: column;
+      }
+      &__content {
+        width: 50%;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          width: 100%;
+        }
+        &.imgs {
+          display: flex;
+          gap: 10px;
+          align-items: flex-end;
+        }
+        &:nth-child(1) {
+          padding: 40px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            padding: 20px;
+          }
+        }
+        .title {
+          @include gothamBold($s: 40px, $lh: 110%);
+          color: $white;
+          margin-bottom: 25px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamBold($s: 30px, $lh: 110%);
+          }
+        }
+        .list {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          align-items: center;
+
+          width: 100%;
+          &__item {
+            padding: 14px 20px;
+
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            @include adaptive(phoneLandscape, phonePortrait) {
+              padding: 7px 20px;
+            }
+            a {
+              color: $white;
+              @include gothamReg($s: 16px, $lh: 100%);
+              @include adaptive(phoneLandscape, phonePortrait) {
+                @include gothamReg($s: 12px, $lh: 100%);
+              }
+            }
+
+            &:nth-last-child(1) {
+              background-color: $white;
+              border: 1px solid $white;
+              a {
+                color: $blackLight;
+              }
+            }
+          }
+        }
+        .progress {
+          margin-top: 60px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            margin-top: 30px;
+          }
+        }
+        .img-wrap {
+          &.s {
+            width: 28%;
+            height: 200px;
+            @include adaptive(tabletLandscape, tabletPortrait) {
+              height: 180px;
+            }
+            @include adaptive(phoneLandscape, phonePortrait) {
+              height: 125px;
+            }
+          }
+          &.m {
+            width: 33%;
+            height: 225px;
+            @include adaptive(tabletLandscape, tabletPortrait) {
+              height: 210px;
+            }
+            @include adaptive(phoneLandscape, phonePortrait) {
+              height: 165px;
+            }
+          }
+          &.l {
+            width: 37%;
+            height: 100%;
+            @include adaptive(tabletLandscape, tabletPortrait) {
+              height: 230px;
+            }
+            @include adaptive(phoneLandscape, phonePortrait) {
+              height: 230px;
+            }
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .pagations {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 40px;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        display: none;
+      }
+      .pages {
+        display: flex;
+        gap: 10px;
+        &__item {
+          width: 45px;
+          height: 45px;
+          border: 1px solid rgba(59, 55, 52, 0.2);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include gothamReg($s: 18px, $lh: 100%);
+          color: $whiteDark;
+          cursor: pointer;
+          transition: 0.3s;
+          &.active {
+            background-color: $gold;
+            border: 1px solid $gold;
+            @include gothamBold($s: 18px, $lh: 100%);
+            color: $white;
+            &:hover {
+              background-color: $gold;
+              transition: 0.3s;
+            }
+          }
+          &:hover {
+            background-color: $white;
+            transition: 0.3s;
+          }
+        }
+      }
+      .info {
+        @include gothamReg($s: 16px, $lh: 100%);
+        color: $whiteDark;
+      }
+      .next {
+        height: 50px;
+        padding: 0 20px;
+        background-color: $gold;
+        color: $white;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        border-radius: 30px;
+        border: 1px solid $gold;
+        outline: none;
+        cursor: pointer;
+        @include gothamBlack($s: 16px, $lh: 100%);
+        transition: 0.3s;
+
+        &:hover {
+          opacity: 0.7;
+          transition: 0.3s;
+        }
+      }
+    }
+    .load-more {
+      margin-top: 40px;
+      width: 100%;
+      display: none;
+      cursor: pointer;
+      height: 60px;
+      border-radius: 30px;
+      border: 1px solid rgba(208, 169, 102, 0.5);
+      background-color: $gold;
+      padding: 0 56px;
+      @include gothamBold($s: 16px, $lh: 95%);
+      color: $white;
+
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        display: flex;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        display: flex;
+      }
+    }
+  }
+}

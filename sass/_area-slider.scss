@@ -1,0 +1,252 @@
+.dis-area-slider {
+  padding-top: 100px;
+  width: 100%;
+  overflow: hidden;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-top: 50px;
+  }
+
+  .container {
+    .swiper-scrollbar {
+      margin-top: 40px;
+      position: relative !important;
+      left: 0 !important;
+      background: rgba(33, 33, 33, 0.3);
+      height: 1px !important;
+      width: 100%;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        display: none;
+      }
+
+      .swiper-scrollbar-drag {
+        background: $blackLight;
+        height: 1px;
+      }
+    }
+    .mob-link {
+      display: none;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+        color: $gold;
+        padding: 23px;
+        border-radius: 30px;
+
+        border: 1px solid $gold;
+        @include gothamBold($s: 16px, $lh: 90%);
+      }
+    }
+    .content-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+      .title-wrap {
+        display: flex;
+        align-items: flex-end;
+        gap: 60px;
+        .title {
+          max-width: 640px;
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            max-width: 490px;
+          }
+
+          .gold {
+            color: $gold;
+          }
+        }
+        .link {
+          @include gothamReg($s: 16px, $lh: 90%);
+          text-decoration: underline;
+          color: $whiteDark;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+        }
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          display: none;
+        }
+        .slider-control {
+          width: 40px;
+          height: 40px;
+          border: 1px solid $blackLight;
+          border-radius: 50%;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          outline: none;
+          cursor: pointer;
+          &.prev {
+            transform: rotate(180deg);
+          }
+          &.swiper-button-disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    .slider {
+      width: 100%;
+      .slide {
+        width: calc(33.333% - 20px);
+        flex-shrink: 0;
+        overflow: hidden;
+        cursor: pointer;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          width: 360px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          width: 280px;
+        }
+        .img-wrap {
+          height: 320px;
+          width: 100%;
+          position: relative;
+          transition: 0.3s;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            height: 240px;
+          }
+          .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .like {
+            position: absolute;
+            cursor: pointer;
+            right: 10px;
+            top: 10px;
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            border-radius: 50%;
+            background-color: rgba(15, 15, 15, 0.4);
+          }
+        }
+        .text-content {
+          background-color: $white;
+          padding: 25px;
+          position: relative;
+          transition: 0.3s;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            padding-bottom: 100px;
+          }
+          .dis-name {
+            @include gothamBold($s: 20px, $lh: 140%);
+            margin-bottom: 15px;
+          }
+          .paragraf {
+            @include gothamReg($s: 14px, $lh: 130%);
+            margin-bottom: 20px;
+            color: $whiteDark;
+          }
+          .price {
+            @include gothamBlack($s: 14px, $lh: 90%);
+            color: $gold;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 25px;
+            &::before {
+              content: url("../imgs/mon-gold.svg");
+            }
+          }
+
+          .btns-group {
+            display: flex;
+            gap: 10px;
+            position: absolute;
+            left: 25px;
+            bottom: -100%;
+            width: calc(100% - 50px);
+            transition: 0.3s;
+            @include adaptive(
+              tabletLandscape,
+              tabletPortrait,
+              phoneLandscape,
+              phonePortrait
+            ) {
+              bottom: 25px;
+            }
+            .link {
+              height: 50px;
+              border-radius: 30px;
+              @include gothamBlack($s: 16px, $lh: 90%);
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              cursor: pointer;
+              border: 1px solid $gold;
+              background-color: $gold;
+              color: $white;
+              flex-grow: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            .wa-btn {
+              width: 50px;
+              height: 50px;
+              border-radius: 30px;
+              background-color: transparent;
+              border: 1px solid $gold;
+              cursor: pointer;
+            }
+          }
+        }
+        &:hover {
+          .img-wrap {
+            height: 240px;
+            transition: 0.3s;
+          }
+          .text-content {
+            padding-bottom: 100px;
+            transition: 0.3s;
+          }
+          .btns-group {
+            bottom: 25px;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}

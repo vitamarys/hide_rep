@@ -1,0 +1,341 @@
+.economic {
+  padding-top: 150px;
+  .container {
+    .content-wrap {
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        flex-direction: column;
+      }
+      &:nth-child(1) {
+      }
+      &:nth-child(2) {
+        margin-top: 160px;
+      }
+      display: flex;
+      .content-item {
+        width: 30%;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          width: 100%;
+        }
+        &:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        &:nth-child(2) {
+          width: 70%;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            width: 100%;
+          }
+        }
+        .small-title {
+          @include gothamBold($s: 16px, $lh: 90%);
+          color: $blackLight;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            margin-bottom: 40px;
+          }
+        }
+        .visa {
+          @include gothamBold($s: 40px, $lh: 100%);
+          color: $whiteDark;
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          &.link {
+            color: $gold;
+            cursor: pointer;
+            @include gothamBold($s: 14px, $lh: 100%);
+            border: 1px solid $gold;
+            border-radius: 30px;
+            width: fit-content;
+            padding: 24px 40px;
+            transition: 0.3s;
+            &:hover {
+              background-color: $gold;
+              color: $white;
+              transition: 0.3s;
+            }
+            &::after {
+              display: none;
+            }
+          }
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+          &::after {
+            content: url("../imgs/info.svg");
+            width: 30px;
+            height: 30px;
+            display: block;
+          }
+        }
+        .roi {
+          display: flex;
+          flex-direction: column;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+
+          .bold {
+            @include gothamBold($s: 140px, $lh: 110%);
+            color: $blackLight;
+          }
+          .light {
+            @include gothamReg($s: 16px, $lh: 100%);
+            color: $whiteDark;
+          }
+        }
+        .title {
+          margin-bottom: 30px;
+          .gold {
+            color: $gold;
+          }
+        }
+        .paragraf {
+          @include gothamReg($s: 16px, $lh: 150%);
+          color: $whiteDark;
+          margin-bottom: 15px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamReg($s: 14px, $lh: 150%);
+          }
+        }
+        .descr {
+          @include gothamReg($s: 16px, $lh: 150%);
+          color: $whiteDark;
+        }
+        .mob-block {
+          display: none;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: flex;
+            flex-direction: column;
+          }
+          .link {
+            color: $gold;
+            cursor: pointer;
+            @include gothamBold($s: 14px, $lh: 100%);
+            border: 1px solid $gold;
+            border-radius: 30px;
+            width: fit-content;
+            padding: 24px 40px;
+
+            margin-bottom: 60px;
+          }
+          .roi {
+            display: flex;
+            margin-bottom: 30px;
+            @include adaptive(
+              tabletLandscape,
+              tabletPortrait,
+              phoneLandscape,
+              phonePortrait
+            ) {
+              .bold {
+                @include gothamBold($s: 40px, $lh: 110%);
+                color: $blackLight;
+              }
+              .light {
+                @include gothamReg($s: 12px, $lh: 100%);
+                color: $whiteDark;
+              }
+            }
+          }
+        }
+        #diagram {
+          width: 100%;
+          height: 350px;
+          margin-bottom: 20px;
+        }
+        .payment {
+          display: flex;
+          gap: 70px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            gap: 35px;
+          }
+          &__item {
+            width: calc(33.33% - 35px);
+            @include adaptive(phoneLandscape, phonePortrait) {
+              width: calc(33.33% - 17.5px);
+            }
+            display: flex;
+            flex-direction: column;
+
+            .bold {
+              @include gothamBold($s: 70px, $lh: 110%);
+              color: $blackLight;
+              width: 100%;
+              border-bottom: 1px solid rgba(122, 122, 122, 0.2);
+              @include adaptive(tabletLandscape, tabletPortrait) {
+                @include gothamBold($s: 50px, $lh: 110%);
+              }
+              @include adaptive(phoneLandscape, phonePortrait) {
+                @include gothamBold($s: 30px, $lh: 110%);
+              }
+            }
+            .light {
+              margin-top: 15px;
+              @include gothamReg($s: 16px, $lh: 100%);
+              color: $whiteDark;
+              @include adaptive(phoneLandscape, phonePortrait) {
+                @include gothamReg($s: 10px, $lh: 100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .baner {
+    max-width: 1340px;
+    margin: 80px auto 0 auto;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    @include adaptive(phoneLandscape, phonePortrait) {
+      margin: 40px auto 0 auto;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .baner__btns {
+      display: flex;
+    }
+    .btns {
+      display: flex;
+
+      margin-top: 40px;
+      position: absolute;
+      bottom: -90px;
+      right: calc(50% - 1160px / 2);
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        right: 70px;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        right: 25px;
+      }
+      // .btn {
+      //   border: 1px solid $gold;
+      //   width: 180px;
+      //   height: 180px;
+      //   border-radius: 100%;
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+      //   background-color: $blackLight;
+      //   border: 1px solid $blackLight;
+      //   @include gothamBlack($s: 16px, $lh: 90%);
+
+      //   color: $white;
+      //   span {
+      //     max-width: 110px;
+
+      //     text-align: left;
+      //   }
+      //   &.gold {
+      //     background-color: $gold;
+      //     color: $white;
+      //     cursor: pointer;
+      //     border: 1px solid $gold;
+      //     span {
+      //       max-width: 110px;
+      //       max-width: 70px;
+      //     }
+      //   }
+      //   &.trans {
+      //     position: relative;
+
+      //     left: 40px;
+      //   }
+      // }
+      .btn {
+        border: 1px solid transparent;
+        width: 180px;
+        height: 180px;
+        &.trans {
+          border: 1px solid $gold;
+          .mas {
+            background-color: $white;
+          }
+          button {
+            background-color: $white;
+            color: $gold;
+          }
+          .mas {
+            background-color: $gold;
+            color: $blackLight;
+          }
+        }
+        &.black {
+          position: relative;
+
+          left: 40px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            left: 15px;
+          }
+        }
+        &.gold {
+          button {
+            background-color: $gold;
+            color: $white;
+          }
+          .mas {
+            background-color: $white;
+            color: $gold;
+          }
+        }
+        button {
+          background-color: $blackLight;
+          color: $white;
+          word-spacing: 200px;
+          text-align: left;
+          padding-left: 55px;
+          @include gothamBlack($s: 16px, $lh: 90%);
+        }
+
+        .mas {
+          background-color: $gold;
+          word-spacing: 200px;
+          text-align: left;
+          padding-left: 55px;
+          @include gothamBlack($s: 16px, $lh: 90%);
+        }
+      }
+    }
+  }
+}

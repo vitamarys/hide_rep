@@ -1,0 +1,109 @@
+.baner {
+  margin-top: 200px;
+  width: 100%;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    margin-top: 100px;
+  }
+  .wraper {
+    width: 100%;
+    padding-bottom: 160px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      padding-bottom: 30px;
+    }
+    .container {
+      .title {
+        @include fontHeading($s: 120px, $w: 500, $lh: 90%);
+        letter-spacing: -3.6px;
+        color: white;
+        margin-bottom: 75px;
+        transform: translateY(-60px);
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          margin-bottom: -60px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          @include fontHeading($s: 65px, $w: 500, $lh: 90%);
+          margin-bottom: 0px;
+          transform: translateY(-40px);
+        }
+      }
+      .content-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          justify-content: flex-end;
+        }
+        .paragraf {
+          @include gothamReg($s: 16px, $lh: 150%);
+          color: $white;
+          max-width: 420px;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+        }
+
+        .btn {
+          border: 1px solid $gold;
+
+          button {
+            background-color: $gold;
+            color: $white;
+
+            text-align: left;
+            justify-content: center;
+            @include gothamBlack($s: 16px, $lh: 90%);
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include gothamBold($s: 14px, $lh: 90%);
+            }
+          }
+          .text {
+            max-width: 80px;
+          }
+
+          .mas {
+            background-color: $white;
+            color: $black;
+            justify-content: center;
+            text-align: left;
+
+            @include gothamBlack($s: 16px, $lh: 90%);
+          }
+        }
+      }
+    }
+  }
+  .mob-paragraf {
+    @include gothamReg($s: 16px, $lh: 150%);
+    color: $whiteDark;
+    margin: 50px auto 0 auto;
+    width: 100%;
+    display: none;
+    @include adaptive(tabletLandscape, tabletPortrait) {
+      padding: 0 70px;
+      display: block;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      padding: 0 25px;
+      display: block;
+      @include gothamReg($s: 14px, $lh: 150%);
+    }
+  }
+}

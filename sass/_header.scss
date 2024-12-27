@@ -1,0 +1,114 @@
+.header {
+  &.dark {
+    background-color: $black;
+    color: $white;
+    img {
+      filter: invert(100%);
+    }
+    .nav__list__item {
+      a {
+        color: $white;
+      }
+    }
+    border-bottom: 1px solid $headerBorderDark;
+    border-left: 1px solid $headerBorderDark;
+    .logo {
+      border-right: 1px solid $headerBorderDark;
+    }
+    .dropdown-wrap {
+      border-right: 1px solid $headerBorderDark;
+    }
+    .nav__list__item {
+      border-right: 1px solid $headerBorderDark;
+    }
+  }
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  display: flex;
+  height: 70px;
+  @include fontHeading($s: 16px, $w: 600, $lh: 100%);
+  color: $blackLight;
+  border-bottom: 1px solid $headerBorder;
+  border-left: 1px solid $headerBorder;
+
+  .dropdown-wrap {
+    padding: 0 30px;
+    cursor: pointer;
+    border-right: 1px solid $headerBorder;
+    @include adaptive(tabletLandscape, tabletPortrait) {
+      padding: 0 20px;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      padding: 0 10px;
+    }
+    &.price {
+      @include adaptive(phoneLandscape, phonePortrait) {
+        display: none;
+      }
+    }
+    .dropdown-select {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 10px;
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    border-right: 1px solid $headerBorder;
+  }
+  .nav {
+    &__list {
+      display: flex;
+
+      height: 100%;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        display: none;
+      }
+      &__item {
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        height: 100%;
+        border-right: 1px solid $headerBorder;
+        a {
+          color: $blackLight;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          &.gold {
+            color: $gold;
+          }
+        }
+        &.hide {
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+        }
+        &.heart {
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            font-size: 0;
+          }
+          @include adaptive(phoneLandscape, phonePortrait) {
+            display: none;
+          }
+        }
+        .search {
+          border: none;
+          outline: none;
+          background-color: transparent;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

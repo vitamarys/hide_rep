@@ -1,0 +1,80 @@
+.projects-hero {
+  padding-top: 60px;
+  @include adaptive(
+    tabletLandscape,
+    tabletPortrait,
+    phoneLandscape,
+    phonePortrait
+  ) {
+    padding-top: 30px;
+  }
+  .container {
+    .breadcrums {
+      margin-bottom: 60px;
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        margin-bottom: 50px;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        margin-bottom: 35px;
+      }
+    }
+    .title-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      .title {
+        max-width: 885px;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          margin-bottom: 30px;
+          @include fontHeading($s: 80px, $w: 600, $lh: 100%);
+          max-width: 700px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          margin-bottom: 30px;
+          @include fontHeading($s: 60px, $w: 600, $lh: 100%);
+        }
+      }
+      .link {
+        height: 60px;
+        padding: 0 53px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 22px 53px;
+        color: $white;
+        background-color: $gold;
+        border-radius: 30px;
+        @include gothamBlack($s: 16px, $lh: 90%);
+        transition: 0.3s;
+        border: 1px solid $gold;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          width: 100%;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          width: 100%;
+          @include gothamBlack($s: 14px, $lh: 90%);
+        }
+        &:hover {
+          background-color: $black;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}

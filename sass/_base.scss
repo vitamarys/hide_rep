@@ -1,0 +1,54 @@
+@import "./_breakpoints";
+html {
+  position: relative;
+}
+body {
+  background-color: $lightBg;
+  &.dark {
+    background-color: $black;
+  }
+}
+.container {
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include adaptive(desktopS) {
+    padding: 0 40px;
+  }
+  @include adaptive(tabletLandscape, tabletPortrait) {
+    padding: 0 70px;
+  }
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding: 0 25px;
+  }
+}
+
+h1 {
+  @include fontHeading($s: 120px, $w: 500, $lh: 90%);
+  letter-spacing: -3.6px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    @include fontHeading($s: 70px, $w: 500, $lh: 90%);
+    letter-spacing: -2.1px;
+  }
+}
+h2 {
+  @include fontHeading($s: 80px, $w: 600, $lh: 100%);
+  letter-spacing: -2.4px;
+  @include adaptive(tabletLandscape, tabletPortrait) {
+    @include fontHeading($s: 60px, $w: 600, $lh: 100%);
+    letter-spacing: -1.2px;
+  }
+  @include adaptive(phoneLandscape, phonePortrait) {
+    @include fontHeading($s: 40px, $w: 600, $lh: 100%);
+    letter-spacing: -1.2px;
+  }
+}
+h3 {
+  @include fontHeading($s: 45px, $w: 500, $lh: 110%);
+  letter-spacing: -1.5px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    @include fontHeading($s: 30px, $w: 500, $lh: 110%);
+    letter-spacing: -0.9px;
+  }
+}

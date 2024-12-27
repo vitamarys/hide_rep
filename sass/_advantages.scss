@@ -1,0 +1,144 @@
+.project-advantages {
+  padding-bottom: 180px;
+
+  @include adaptive(tabletLandscape, tabletPortrait) {
+    display: flex;
+    padding-top: 120px;
+  }
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-top: 90px;
+  }
+  .container {
+    @include adaptive(tabletLandscape, tabletPortrait) {
+      width: 70%;
+      margin: 0;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      width: 100%;
+    }
+  }
+  .advantages {
+    display: flex;
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    gap: 40px;
+    @include adaptive(tabletLandscape, tabletPortrait) {
+      flex-wrap: wrap;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      gap: 40px;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    &__item {
+      width: calc(33.333% - 30px);
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        width: 100%;
+      }
+      .img-wrap {
+        width: 80px;
+        height: 80px;
+        border: 1px solid $whiteDark;
+        border-radius: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          max-width: 50px;
+          max-height: 50px;
+        }
+      }
+      .title {
+        @include fontHeading($s: 45px, $w: 500, $lh: 110%);
+        letter-spacing: -1.35px;
+        margin-bottom: 20px;
+        max-width: 350px;
+        @include adaptive(phoneLandscape, phonePortrait) {
+          @include fontHeading($s: 30px, $w: 500, $lh: 110%);
+          letter-spacing: -0.9px;
+        }
+      }
+      .descr {
+        @include gothamReg($s: 16px, $lh: 150%);
+        color: $whiteDark;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          max-width: 360px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .baner {
+    height: 500px;
+    margin-top: 0;
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    .img-wrap {
+      height: 100%;
+      &:nth-child(1) {
+        width: calc(65% - 20px);
+      }
+      &:nth-child(2) {
+        width: calc(35% - 20px);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      display: none;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .baner-mob {
+    display: none;
+    @include adaptive(tabletLandscape, tabletPortrait) {
+      width: 30%;
+      display: block;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      width: 100%;
+      display: block;
+      height: 375px;
+      margin-top: 70px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+.area {
+  padding-top: 180px;
+  overflow-y: hidden;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-top: 100px;
+  }
+  .area-slider {
+    height: 840px;
+    width: 100%;
+    padding-bottom: 100px;
+    position: relative;
+    @include adaptive(phoneLandscape, phonePortrait) {
+      height: auto;
+    }
+    .control {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      opacity: 0.4;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        opacity: 1;
+        transition: 0.3s;
+      }
+      &.prev-area {
+        left: 50px;
+        top: 45%;
+        transform: rotate(180deg) translateY(50%);
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          left: 20px;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          top: 170px;
+          transform: rotate(180deg) translateY(0%);
+        }
+      }
+      &.next-area {
+        right: calc(50%);
+        top: 45%;
+        transform: translate(-50px, -50%);
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          right: 20px;
+          transform: translate(0px, -50%);
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          top: 170px;
+          transform: translate(0px, 0%);
+        }
+      }
+    }
+    .area-slide {
+      height: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      background-color: $blackLight;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        padding-top: 60px;
+        padding-bottom: 130px;
+      }
+      &__block {
+        width: 50%;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          width: 100%;
+        }
+        &:nth-child(1) {
+          display: flex;
+
+          align-items: center;
+          justify-content: center;
+        }
+        &:nth-child(2) {
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            display: none;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          .img-wrap {
+            width: 180px;
+            height: 270px;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              height: 250px;
+              width: 220px;
+            }
+          }
+          .slide-title {
+            @include fontHeading($s: 80px, $w: 600, $lh: 90%);
+            letter-spacing: -2.4px;
+            color: $white;
+            padding-bottom: 20px;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            &::before {
+              content: "";
+              height: 5px;
+              width: 100%;
+              display: block;
+              background-color: $gold;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+            @include adaptive(phoneLandscape, phonePortrait) {
+              @include fontHeading($s: 40px, $w: 600, $lh: 90%);
+              position: static;
+              transform: translateX(0%);
+              top: 0px;
+              left: 0%;
+              order: 2;
+              margin-top: 25px;
+            }
+          }
+          .descr {
+            @include gothamReg($s: 16px, $lh: 150%);
+            color: $whiteDark;
+            max-width: 279px;
+            text-align: center;
+            margin-top: 50px;
+            @include adaptive(phoneLandscape, phonePortrait) {
+              order: 3;
+              @include gothamReg($s: 14px, $lh: 150%);
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .btns {
+      display: flex;
+      position: absolute;
+
+      bottom: 0;
+      left: 25%;
+
+      z-index: 2;
+      transform: translateX(-50%);
+      @include adaptive(phoneLandscape, phonePortrait) {
+        bottom: 55px;
+      }
+      @include adaptive(tabletLandscape, tabletPortrait) {
+        margin-top: 0px;
+        left: calc(50% + 20px);
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        justify-content: flex-start;
+        margin-top: 20px;
+        left: 50%;
+      }
+
+      .btn {
+        border: 1px solid $gold;
+
+        &.trans {
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          .mas {
+            background-color: $goldDark;
+          }
+          button {
+            background-color: $blackLight;
+            color: $white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          }
+          .mas {
+            background-color: $gold;
+            color: $white;
+          }
+        }
+
+        button {
+          background-color: $gold;
+          color: $white;
+
+          text-align: left;
+          justify-content: center;
+          @include gothamBlack($s: 16px, $lh: 90%);
+
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamBlack($s: 14px, $lh: 90%);
+            padding-left: 0px;
+          }
+        }
+        .text {
+          max-width: 75px;
+        }
+
+        .mas {
+          background-color: $white;
+          color: $black;
+          justify-content: center;
+          text-align: left;
+
+          @include gothamBlack($s: 16px, $lh: 90%);
+        }
+        &.left {
+          position: relative;
+
+          left: -40px;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            left: -20px;
+          }
+        }
+        &.trans {
+          @include adaptive(phoneLandscape, phonePortrait) {
+            left: 15px;
+          }
+        }
+      }
+    }
+  }
+}

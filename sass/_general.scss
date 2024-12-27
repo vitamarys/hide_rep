@@ -1,0 +1,68 @@
+.general {
+  background-image: url("../imgs/Bg.png");
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-bottom: 85px;
+  }
+  .container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    @include adaptive(
+      tabletLandscape,
+      tabletPortrait,
+      phoneLandscape,
+      phonePortrait
+    ) {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    @include adaptive(phoneLandscape, phonePortrait) {
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    h1 {
+      max-width: 885px;
+      color: $white;
+      .gold {
+        color: $gold;
+      }
+    }
+    .find-link {
+      display: flex;
+      padding: 22px 53px;
+      gap: 5px;
+      color: $white;
+      background-color: $gold;
+      border-radius: 30px;
+      @include gothamBlack($s: 16px, $lh: 90%);
+      transition: 0.3s;
+      border: 1px solid $gold;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        width: 100%;
+        margin-top: 50px;
+        justify-content: center;
+      }
+      @include adaptive(phoneLandscape, phonePortrait) {
+        width: 100%;
+        margin-top: 30px;
+      }
+      &:hover {
+        background-color: $black;
+        transition: 0.3s;
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.amenities {
+  padding-top: 180px;
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-top: 70px;
+  }
+  .container {
+    position: relative;
+    @include adaptive(phoneLandscape, phonePortrait) {
+      padding-bottom: 70px;
+    }
+    .swiper-scrollbar {
+      margin-top: 40px;
+      position: relative !important;
+      left: 0 !important;
+      background: rgba(33, 33, 33, 0.3);
+      height: 1px !important;
+      width: 100%;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        position: absolute !important;
+        right: 25px !important;
+        left: auto !important;
+        bottom: 15px !important;
+        width: 60% !important;
+      }
+      .swiper-scrollbar-drag {
+        background: $blackLight;
+        height: 1px;
+      }
+    }
+    .small-title {
+      @include gothamBold($s: 16px, $lh: 90%);
+      color: $blackLight;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      @include adaptive(
+        tabletLandscape,
+        tabletPortrait,
+        phoneLandscape,
+        phonePortrait
+      ) {
+        position: static;
+        margin-bottom: 60px;
+      }
+    }
+    .amenities-slider {
+      position: relative;
+      overflow: hidden;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        position: static;
+      }
+      .controls {
+        position: absolute;
+        display: flex;
+        gap: 10px;
+        left: 0;
+        bottom: 0;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          left: auto;
+          bottom: auto;
+          right: 0;
+          top: 0;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          left: 25px;
+          bottom: 0;
+          right: auto;
+          top: auto;
+        }
+
+        .slider-control {
+          width: 40px;
+          height: 40px;
+          border: 1px solid $blackLight;
+          border-radius: 50%;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          outline: none;
+          cursor: pointer;
+          z-index: 2;
+          &.prev-am {
+            transform: rotate(180deg);
+          }
+          &.swiper-button-disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+      .amenities-slide {
+        width: 100%;
+        display: flex;
+        flex-shrink: 0;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          flex-direction: column;
+        }
+        &__section {
+          height: 500px;
+          width: 70%;
+          @include adaptive(
+            tabletLandscape,
+            tabletPortrait,
+            phoneLandscape,
+            phonePortrait
+          ) {
+            width: 100%;
+          }
+          &.small {
+            width: 30%;
+            padding-right: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 70px;
+            @include adaptive(
+              tabletLandscape,
+              tabletPortrait,
+              phoneLandscape,
+              phonePortrait
+            ) {
+              width: 100%;
+              padding-right: 0px;
+              padding-bottom: 0px;
+              justify-content: flex-start;
+              height: auto;
+            }
+          }
+          .slide-title {
+            @include fontHeading($s: 45px, $w: 500, $lh: 110%);
+            margin-bottom: 20px;
+            @include adaptive(tabletLandscape, tabletPortrait) {
+              max-width: 80%;
+            }
+          }
+          .paragraf {
+            @include gothamReg($s: 16px, $lh: 150%);
+            color: $whiteDark;
+            @include adaptive(tabletLandscape, tabletPortrait) {
+              margin-bottom: 40px;
+              max-height: 460px;
+            }
+            @include adaptive(
+              tabletLandscape,
+              tabletPortrait,
+              phoneLandscape,
+              phonePortrait
+            ) {
+              margin-bottom: 20px;
+            }
+          }
+          img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

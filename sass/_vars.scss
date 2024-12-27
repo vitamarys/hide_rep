@@ -1,0 +1,68 @@
+$gold: #d0a966;
+$black: #101010;
+$white: #ffffff;
+$lightBg: #f2f0ef;
+$goldDark: #9f8c6c;
+$blackLight: #222222;
+$headerBorder: rgba(33, 33, 33, 0.1);
+$headerBorderDark: rgba(255, 255, 255, 0.1);
+$whiteDark: #7b7b7b;
+$grey: #a7a4a4;
+
+$headingFont: "Playfair Display", serif;
+
+@mixin fontHeading($s: 14px, $w: 400, $lh: 90%) {
+  font-family: $headingFont;
+  font-size: $s;
+  font-weight: $w;
+  line-height: $lh;
+}
+@mixin gothamBold($s: 14px, $lh: 110%) {
+  font-family: "GothamProBold";
+  font-size: $s;
+
+  line-height: $lh;
+}
+@mixin gothamBlack($s: 14px, $lh: 90%) {
+  font-family: "GothamProBlack";
+  font-size: $s;
+
+  line-height: $lh;
+}
+@mixin gothamReg($s: 14px, $lh: 150%) {
+  font-family: "GothamProRegular";
+  font-size: $s;
+
+  line-height: $lh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin button($bcolor, $url, $x1, $y1, $bor, $col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+
+.header {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  margin-top: 12vh;
+}
+
+.footer {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 15vh;
+}

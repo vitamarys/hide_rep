@@ -1,0 +1,191 @@
+.nominates {
+  padding-top: 180px;
+  @include adaptive(tabletLandscape, tabletPortrait) {
+    padding-top: 120px;
+  }
+  @include adaptive(phoneLandscape, phonePortrait) {
+    padding-top: 100px;
+  }
+  .container {
+    .swiper-scrollbar {
+      margin-top: 40px;
+      position: relative !important;
+      left: 0 !important;
+      background: rgba(225, 225, 225, 0.3);
+      height: 1px !important;
+      width: 100% !important;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        display: none;
+      }
+      .swiper-scrollbar-drag {
+        background: $white;
+        height: 1px;
+      }
+    }
+    .content-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+      .title-wrap {
+        display: flex;
+        align-items: flex-end;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          width: 100%;
+          justify-content: space-between;
+        }
+        gap: 60px;
+        .title {
+          max-width: 640px;
+          color: $white;
+          @include adaptive(tabletLandscape, tabletPortrait) {
+            max-width: 490px;
+          }
+
+          .gold {
+            color: $gold;
+          }
+        }
+        .link {
+          @include gothamReg($s: 16px, $lh: 90%);
+          text-decoration: underline;
+          color: $whiteDark;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            display: none;
+            margin-bottom: 30px;
+          }
+        }
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        @include adaptive(
+          tabletLandscape,
+          tabletPortrait,
+          phoneLandscape,
+          phonePortrait
+        ) {
+          display: none;
+        }
+        .slider-control {
+          width: 40px;
+          height: 40px;
+          border: 1px solid $blackLight;
+          border-radius: 50%;
+          background-color: transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          outline: none;
+          cursor: pointer;
+          &.prev {
+            transform: rotate(180deg);
+          }
+          &.swiper-button-disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    .nominates-slider {
+      width: 100%;
+      overflow: hidden;
+
+      .nom-slide {
+        width: calc(33.333% - 20px);
+        height: 360px;
+        background-color: $blackLight;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        @include adaptive(tabletLandscape, tabletPortrait) {
+          width: 360px !important;
+          flex-shrink: 0;
+        }
+        @include adaptive(phoneLandscape, phonePortrait) {
+          width: 280px !important;
+          flex-shrink: 0;
+          height: 320px;
+        }
+        .img-wrap {
+          width: 189px;
+          height: 189px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .stiker {
+          @include gothamReg($s: 16px, $lh: 150%);
+          color: $whiteDark;
+          position: absolute;
+          &.top {
+            top: 25px;
+            left: 25px;
+          }
+          &.bot {
+            bottom: 25px;
+            right: 25px;
+          }
+        }
+      }
+    }
+    .chars {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      gap: 55px;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        gap: 20px;
+      }
+
+      &__item {
+        flex-shrink: 0;
+        max-width: 245px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @include adaptive(phoneLandscape, phonePortrait) {
+          max-width: calc(50% - 10px);
+        }
+        .bold {
+          @include gothamBold($s: 40px, $lh: 110%);
+          color: $white;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamBold($s: 20px, $lh: 110%);
+          }
+        }
+        .light {
+          @include gothamReg($s: 16px, $lh: 150%);
+          color: $whiteDark;
+          @include adaptive(phoneLandscape, phonePortrait) {
+            @include gothamReg($s: 12px, $lh: 150%);
+          }
+        }
+      }
+    }
+    .mob-link {
+      display: none;
+      @include adaptive(phoneLandscape, phonePortrait) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgba(208, 169, 102, 0.5);
+        border-radius: 30px;
+        @include gothamBlack($s: 14px, $lh: 110%);
+        color: $gold;
+        margin-top: 25px;
+      }
+    }
+  }
+}
